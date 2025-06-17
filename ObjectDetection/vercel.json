@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.8",
+        "buildCommand": "pip3.8 install --disable-pip-version-check --target . --upgrade -r /vercel/path0/requirements.txt --verbose"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "a/(.*)",
+      "dest": "app.py"
+    }
+  ]
+}
